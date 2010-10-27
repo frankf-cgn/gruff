@@ -69,11 +69,9 @@ protected
         @d = @d.rectangle(left_x, conv[0], right_x, conv[1])
 
         # Calculate center based on bar_width and current row
-        label_center = @graph_left + 
-                      (@data.length * @bar_width * point_index) + 
-                      (@data.length * @bar_width / 2.0)
+        label_center = @graph_left + (@bar_width * row_index) + (@bar_width * @bar_spacing / 2.0)
         # Subtract half a bar width to center left if requested
-        draw_label(label_center - (@center_labels_over_point ? @bar_width / 2.0 : 0.0), point_index)
+        draw_label(label_center, row_index)
       end
 
     end
